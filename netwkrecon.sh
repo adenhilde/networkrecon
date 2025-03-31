@@ -80,18 +80,18 @@ echo "----------- Print Scan Results -----------"
 select choice in "Display Ping Sweep Results" "Display Port Scan Results" "Remove Ping Sweep Results File" "Remove Port Scan Results File" "Main Menu"; do
     case $choice in
         "Display Ping Sweep Results")
-            if less ${pingfile} &> /dev/null; then
+            if more ${pingfile} &> /dev/null; then
                 #display file normally
-                less ${pingfile}
+                more ${pingfile}
             else
                 echo "Ping Sweep Results File Not Found"
             fi
             printScanResults
             ;;
         "Display Port Scan Results")
-            if less ${portfile} &> /dev/null; then
+            if more ${portfile} &> /dev/null; then
                 #display file normally
-                less ${portfile}
+                more ${portfile}
             else
                 echo "Port Scan Results File Not Found"
             fi
